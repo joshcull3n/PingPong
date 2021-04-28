@@ -4,7 +4,8 @@ Set up two docker containers to speak to eachother
 This repository contains two basic web services built using Flask that are intended to talk to eachother from inside separate containers using docker network. The ping service will send a request to the pong service, and return 'ping ... pong' if successful. 
 
 Relevant docker commands:
-```cd ~/ping
+```
+cd ~/ping
 docker build -t ping-service .
 docker run --name ping-service-container -p 5000:5000 ping-service
 
