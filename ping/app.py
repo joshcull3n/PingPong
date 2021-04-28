@@ -5,11 +5,11 @@ import requests
 
 @app.route('/')
 def ping_service():
-  return 'hello, I am ping service'
+  return '\nhello, I am the ping service!'
 
 @app.route('/ping')
 def do_ping():
-  ping = 'ping ... '
+  ping = '\nping ... '
   response = ''
 
   try:
@@ -18,7 +18,7 @@ def do_ping():
     print('\ncannot reach the pong service. :(')
     return ping
   
-  ping += response + '\n'
+  ping += response.text + '\n'
   return ping
 
 if __name__ == "__main__":

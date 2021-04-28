@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def pong_service():
-  return 'hello, I am the pong service!'
+  return '\nhello, I am the pong service!'
 
 @app.route('/pong')
 def do_pong():

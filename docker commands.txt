@@ -1,0 +1,15 @@
+cd ~/ping
+docker build -t ping-service .
+docker run --name ping-service-container -p 5000:5000 ping-service
+
+cd ../pong
+docker build -t pong-service .
+docker run --name pong-service-container -p 5000:5000 pong-service
+
+docker network create ping-pong-network
+docker network connect ping-pong-network ping-service-container
+docker network connect ping-pong-network pong-service-container
+
+docker network inspect ping-pong-network
+
+curl localhost:5000/ping
