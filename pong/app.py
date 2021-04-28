@@ -3,11 +3,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def pong_service():
-  return 'hello, I am pong service!'
+  return 'hello, I am the pong service!'
 
 @app.route('/pong')
 def do_pong():
-  return 'Pong'
+  return 'pong'
 
 if __name__ == "__main__":
   app.run(host = '0.0.0.0', port = 5001, debug = True)
